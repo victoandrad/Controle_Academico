@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 //            TeacherSeeder::class,
 //            RoomSeeder::class,
 //            StudentSeeder::class,
+//            TimeslotSeeder::class,
         ]);
     }
 }
