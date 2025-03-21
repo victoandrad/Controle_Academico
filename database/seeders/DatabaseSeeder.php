@@ -14,11 +14,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DatabaseSeeder::call([
-//            UserSeeder::class,
-//            TeacherSeeder::class,
-//            RoomSeeder::class,
-//            StudentSeeder::class,
-//            TimeslotSeeder::class,
+            UserSeeder::class,
+            TeacherSeeder::class,
+            RoomSeeder::class,
+            StudentGroupSeeder::class,
+            StudentSeeder::class,
+            TimeslotSeeder::class,
         ]);
     }
 }

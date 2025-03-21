@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->string('name');
             $table->string('registration_number')->unique();
-            $table->unsignedBigInteger('student_group_id');
+            $table->string('name');
 
+            $table->unsignedBigInteger('student_group_id');
             $table->foreign('student_group_id')->references('id')->on('student_groups');
         });
     }

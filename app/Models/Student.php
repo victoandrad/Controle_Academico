@@ -13,8 +13,8 @@ class Student extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
         'registration_number',
+        'name',
         'student_group_id',
     ];
 }

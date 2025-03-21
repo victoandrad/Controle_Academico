@@ -16,15 +16,18 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unsignedInteger('room_id');
-            $table->unsignedInteger('timeslot_id');
-            $table->unsignedInteger('teacher_id');
-            $table->unsignedInteger('student_group_id');
-            $table->unsignedInteger('curriculum_unit_id');
-
             $table->foreign('room_id')->references('id')->on('rooms');
+
+            $table->unsignedInteger('timeslot_id');
             $table->foreign('timeslot_id')->references('id')->on('timeslots');
+
+            $table->unsignedInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
+
+            $table->unsignedInteger('student_group_id');
             $table->foreign('student_group_id')->references('id')->on('student_groups');
+
+            $table->unsignedInteger('curriculum_unit_id');
             $table->foreign('curriculum_unit_id')->references('id')->on('curriculum_units');
         });
     }

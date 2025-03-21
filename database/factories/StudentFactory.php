@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->name(),
+            'name' => fake()->name(),
+            'registration_number' => fake()->unique()->randomNumber(8),
+            'student_group_id' => StudentGroup::query()->inRandomOrder()->first()->id,
         ];
     }
 }

@@ -17,9 +17,9 @@ class TimeslotFactory extends Factory
     public function definition(): array
     {
         return [
-            "day_of_week" => fake()->dayOfWeek(),
-            "start_time" => fake()->time(),
-            "end_time" => fake()->time(),
+            'day_of_week' => fake()->dayOfWeek(),
+            'start_time' => fake()->time(),
+            'end_time' => fake()->time(),
         ];
     }
 }

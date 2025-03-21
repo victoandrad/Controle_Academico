@@ -22,11 +22,11 @@ class LessonFactory extends Factory
     public function definition(): array
     {
         return [
-            "room_id" => Room::query()->inRandomOrder()->first(),
-            "timeslot_id" => Timeslot::query()->inRandomOrder()->first(),
-            "teacher_id" => Teacher::query()->inRandomOrder()->first(),
-            "student_group_id" => StudentGroup::query()->inRandomOrder()->first(),
-            "curriculum_unit_id" => CurriculumUnit::query()->inRandomOrder()->first(),
+            'room_id' => Room::query()->inRandomOrder()->first(),
+            'timeslot_id' => Timeslot::query()->inRandomOrder()->first(),
+            'teacher_id' => Teacher::query()->inRandomOrder()->first(),
+            'student_group_id' => StudentGroup::query()->inRandomOrder()->first(),
+            'curriculum_unit_id' => CurriculumUnit::query()->inRandomOrder()->first(),
         ];
     }
 }

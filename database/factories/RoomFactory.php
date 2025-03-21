@@ -17,8 +17,8 @@ class RoomFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->title(),
-            "size" => fake()->numberBetween(1, 100),
+            'name' => fake()->title(),
+            'size' => fake()->numberBetween(1, 100),
         ];
     }
 }
