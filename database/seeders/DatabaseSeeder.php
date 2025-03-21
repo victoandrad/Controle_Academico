@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         DatabaseSeeder::call([
 //            UserSeeder::class,
-            TeacherSeeder::class,
+//            TeacherSeeder::class,
+//            RoomSeeder::class,
         ]);
     }
 }
