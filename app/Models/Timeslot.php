@@ -13,7 +13,6 @@ class Timeslot extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
         'day_of_week',
         'start_time',
         'end_time',

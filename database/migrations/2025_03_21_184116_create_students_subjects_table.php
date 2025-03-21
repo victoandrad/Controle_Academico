@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->integer('grade');
+            $table->integer('frequency');
+
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('subject_id');
 
