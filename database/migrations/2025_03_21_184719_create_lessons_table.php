@@ -19,13 +19,13 @@ return new class extends Migration
             $table->unsignedInteger('timeslot_id');
             $table->unsignedInteger('teacher_id');
             $table->unsignedInteger('student_group_id');
-            $table->unsignedInteger('subject_id');
+            $table->unsignedInteger('curriculum_unit_id');
 
             $table->foreign('room_id')->references('id')->on('rooms');
             $table->foreign('timeslot_id')->references('id')->on('timeslots');
             $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->foreign('student_group_id')->references('id')->on('student_groups');
-            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('curriculum_unit_id')->references('id')->on('curriculum_units');
         });
     }
 

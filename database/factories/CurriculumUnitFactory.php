@@ -17,7 +17,9 @@ class CurriculumUnitFactory extends Factory
     public function definition(): array
     {
         return [
-            "name" => fake()->title()
+            'code' => 'AA000000',
+            'name' => fake()->title(),
+            'hours' => 15,
         ];
     }
 }

@@ -13,6 +13,7 @@ class CurriculumUnit extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name'
+        'name',
+        'hours',
     ];
 }
