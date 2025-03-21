@@ -17,11 +17,11 @@ class LessonFactory extends Factory
     public function definition(): array
     {
         return [
-            "room_id" =>
-            "timeslot_id" =>
-            "teacher_id" =>
-            "student_group_id" =>
-            "subject_id" =>
+//            "room_id" =>
+//            "timeslot_id" =>
+//            "teacher_id" =>
+//            "student_group_id" =>
+//            "subject_id" =>
         ];
     }
 }

@@ -18,7 +18,7 @@ class TeacherFactory extends Factory
     {
         return [
             "name" => fake()->name(),
-            "personal_number" => fake()->randomNumber(10)
+            "personal_number" => fake()->randomNumber(8)
         ];
     }
 }
