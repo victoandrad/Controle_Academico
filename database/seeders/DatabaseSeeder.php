@@ -15,10 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         DatabaseSeeder::call([
             UserSeeder::class,
-            TeacherSeeder::class,
+            CurriculumUnitSeeder::class,
             RoomSeeder::class,
             StudentGroupSeeder::class,
             StudentSeeder::class,
+            TaskSeeder::class,
+            TeacherSeeder::class,
             TimeslotSeeder::class,
         ]);
     }
