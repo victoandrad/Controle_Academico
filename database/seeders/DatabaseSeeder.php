@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             TaskSeeder::class,
             TeacherSeeder::class,
             TimeslotSeeder::class,
+            LessonSeeder::class,
         ]);
     }
 }
