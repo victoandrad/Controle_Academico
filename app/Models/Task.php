@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Teacher extends Model
+class Task extends Model
 {
     use HasFactory;
 
-    protected $table = "teachers";
+    protected $table = 'tasks';
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'personal_number',
         'name',
+        'description',
+        'completed',
+        'value',
+        'student_id',
+        'curriculum_unit_id'
     ];
 }
