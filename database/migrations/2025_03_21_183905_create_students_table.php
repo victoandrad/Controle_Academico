@@ -20,6 +20,9 @@ return new class extends Migration
 
             $table->unsignedBigInteger('student_group_id');
             $table->foreign('student_group_id')->references('id')->on('student_groups');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,8 @@ class TeacherFactory extends Factory
     {
         return [
             'personal_number' => fake()->unique()->randomNumber(8),
-            'name' => fake()->name()
+            'name' => fake()->name(),
+            'user_id' => User::query()->inRandomOrder()->first()->id,
         ];
     }
 }

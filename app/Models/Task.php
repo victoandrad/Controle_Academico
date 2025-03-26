@@ -18,6 +18,6 @@ class Task extends Model
         'completed',
         'value',
         'student_id',
-        'curriculum_unit_id'
+        'curriculum_unit_id',
     ];
 }

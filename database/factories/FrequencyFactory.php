@@ -19,7 +19,7 @@ class FrequencyFactory extends Factory
     public function definition(): array
     {
         return [
-            'value' => fake()->numberBetween(0, 1),
+            'attended' => fake()->boolean,
             'student_id' => Student::query()->inRandomOrder()->first()->id,
             'curriculum_unit_id' => CurriculumUnit::query()->inRandomOrder()->first()->id,
         ];

@@ -17,6 +17,6 @@ class Lesson extends Model
         'timeslot_id',
         'teacher_id',
         'student_group_id',
-        'curriculum_unit_id'
+        'curriculum_unit_id',
     ];
 }

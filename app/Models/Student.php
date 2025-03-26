@@ -16,5 +16,6 @@ class Student extends Model
         'registration_number',
         'name',
         'student_group_id',
+        'user_id',
     ];
 }

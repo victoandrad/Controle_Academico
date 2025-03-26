@@ -13,8 +13,8 @@ class Frequency extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'value',
+        'attended',
         'student_id',
-        'curriculum_unit_id'
+        'curriculum_unit_id',
     ];
 }
