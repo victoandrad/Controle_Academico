@@ -22,7 +22,11 @@ class FrequencyController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'attended' => 'required|boolean',
+            'student_id' => 'required|exists:students,id',
+            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+        ]);
         $data = Frequency::query()->create($validated);
         return response()->json($data, 201);
     }
@@ -48,7 +52,11 @@ class FrequencyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'attended' => 'required|boolean',
+            'student_id' => 'required|exists:students,id',
+            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+        ]);
         try {
             $data = Frequency::query()->findOrFail($id)->update($validated);
             return response()->json($data);

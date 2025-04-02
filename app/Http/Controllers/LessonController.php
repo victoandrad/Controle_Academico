@@ -22,7 +22,13 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'room_id' => 'required|exists:rooms,id',
+            'timeslot_id' => 'required|exists:timeslots,id',
+            'teacher_id' => 'required|exists:teachers,id',
+            'student_group_id' => 'required|exists:student_groups,id',
+            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+        ]);
         $data = Lesson::query()->create($validated);
         return response()->json($data, 201);
     }
@@ -48,7 +54,13 @@ class LessonController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'room_id' => 'required|exists:rooms,id',
+            'timeslot_id' => 'required|exists:timeslots,id',
+            'teacher_id' => 'required|exists:teachers,id',
+            'student_group_id' => 'required|exists:student_groups,id',
+            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+        ]);
         try {
             $data = Lesson::query()->findOrFail($id)->update($validated);
             return response()->json($data);

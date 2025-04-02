@@ -22,7 +22,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'registration_number' => 'required|string|max:255|unique:students,registration_number',
+            'name' => 'required|string|max:255',
+            'student_group_id' => 'required|exists:student_groups,id',
+            'user_id' => 'required|exists:users,id',
+        ]);
         $data = Student::query()->create($validated);
         return response()->json($data, 201);
     }
@@ -48,7 +53,12 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validated = $request->validate([]);
+        $validated = $request->validate([
+            'registration_number' => 'required|string|max:255|unique:students,registration_number',
+            'name' => 'required|string|max:255',
+            'student_group_id' => 'required|exists:student_groups,id',
+            'user_id' => 'required|exists:users,id',
+        ]);
         try {
             $data = Student::query()->findOrFail($id)->update($validated);
             return response()->json($data);
