@@ -23,6 +23,33 @@ Route::resource('teachers', TeacherController::class);
 Route::resource('timeslots', TimeslotController::class);
 Route::resource('users', UserController::class);
 
-Route::get('/', function() {
+Route::get('/admin/desempenho', function() {
     return view('admin.desempenho');
 });
+
+Route::get('/admin/frequencia', function() {
+    return view('admin.frequencia');
+});
+
+Route::get('/admin/home', function() {
+    return view('admin.home');
+});
+
+Route::get('/admin/notas', function() {
+    return view('admin.notas');
+});
+
+Route::get('/cadastro/aluno', function() {
+    return view('cadastro.aluno');
+});
+
+Route::get('/cadastro/professor', function() {
+    return view('cadastro.professor');
+});
+
+Route::get('/cadastro/turma', function() {
+    return view('cadastro.turma');
+});
+
+
+

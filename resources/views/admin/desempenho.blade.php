@@ -2,6 +2,7 @@
 
 @section('content')
     <x-sidebar expand="true"/>
+
     <div class="main">
         <h1 class="mx-4">Bem-vindo à página de Desempenho</h1>
 
