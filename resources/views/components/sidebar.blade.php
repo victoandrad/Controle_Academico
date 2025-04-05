@@ -22,9 +22,9 @@
                     <span>Register</span>
                 </a>
                 <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item"><a href=" {{ route('student_groups') }} " class="sidebar-link">Student Group</a></li>
-                    <li class="sidebar-item"><a href=" {{ route('students') }} " class="sidebar-link">Student</a></li>
-                    <li class="sidebar-item"><a href=" {{ route('teachers') }} " class="sidebar-link">Teacher</a></li>
+                    <li class="sidebar-item"><a href=" {{ route('studentGroups.index') }} " class="sidebar-link">Student Group</a></li>
+                    <li class="sidebar-item"><a href=" {{ route('students.index') }} " class="sidebar-link">Student</a></li>
+                    <li class="sidebar-item"><a href=" {{ route('teachers.index') }} " class="sidebar-link">Teacher</a></li>
                 </ul>
             </li>
         </ul>
