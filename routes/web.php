@@ -39,17 +39,17 @@ Route::get('/admin/notas', function() {
     return view('admin.notas');
 });
 
-Route::get('/register/students', function() {
-    return view('register.students');
-});
+Route::get('students', function() {
+    return view('students');
+})->name('students');
 
-Route::get('/register/professor', function() {
-    return view('register.professor');
-});
+Route::get('teachers', function() {
+    return view('teachers');
+})->name('teachers');
 
-Route::get('/register/turma', function() {
-    return view('register.turma');
-});
+Route::get('student_groups', function() {
+    return view('student_groups');
+})->name('student_groups');
 
 
 

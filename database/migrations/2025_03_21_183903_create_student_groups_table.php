@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('name')->unique();
-            $table->integer('size');
         });
     }
 

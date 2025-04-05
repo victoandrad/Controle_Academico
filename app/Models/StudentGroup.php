@@ -14,6 +14,5 @@ class StudentGroup extends Model
 
     protected $fillable = [
         'name',
-        'size',
     ];
 }
