@@ -7,9 +7,9 @@
         <div class="card mx-4">
 
             <div class="card-body">
-                <h5 class="card-title">Add new Student Group</h5>
+                <h5 class="card-title">Add new student group</h5>
 
-                <div class="row">
+                <form method="POST" action="{{ route('studentGroups.store') }}">
                     <!-- Input Name -->
                     <div class="col-md-3">
                         <label for="name">Name</label>
@@ -20,7 +20,7 @@
                     <div class="col-md-3">
                         <label for="school_year">Year</label>
                         <select id="school_year" name="school_year" class="form-control mb-3">
-                            <option value="">Year</option>
+                            <option value="">Insert the year</option>
                             <option value="1">1º Year</option>
                             <option value="2">2º Year</option>
                             <option value="3">3º Year</option>
@@ -32,14 +32,13 @@
                     <div class="col-md-3">
                         <label for="period">Period</label>
                         <select id="period" name="period" class="form-control mb-3">
-                            <option value="">Period</option>
+                            <option value="">Insert the period</option>
                             <option value="morning">Morning</option>
                             <option value="afternoon">Afternoon</option>
                             <option value="evening">Evening</option>
                         </select>
                     </div>
-
-                </div>
+                </form>
 
                 <button type="submit" class="btn btn-primary mt-3">Confirm</button>
             </div>
