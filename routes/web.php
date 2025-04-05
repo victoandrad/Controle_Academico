@@ -39,16 +39,16 @@ Route::get('/admin/notas', function() {
     return view('admin.notas');
 });
 
-Route::get('/cadastro/aluno', function() {
-    return view('cadastro.aluno');
+Route::get('/register/students', function() {
+    return view('register.students');
 });
 
-Route::get('/cadastro/professor', function() {
-    return view('cadastro.professor');
+Route::get('/register/professor', function() {
+    return view('register.professor');
 });
 
-Route::get('/cadastro/turma', function() {
-    return view('cadastro.turma');
+Route::get('/register/turma', function() {
+    return view('register.turma');
 });
 
 
