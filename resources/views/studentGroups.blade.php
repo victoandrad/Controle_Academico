@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Student Groups')
+
 @section('content')
     <x-sidebar expand="true" />
     <div class="main">
@@ -10,6 +12,8 @@
                 <h5 class="card-title">Add new student group</h5>
 
                 <form method="POST" action="{{ route('studentGroups.store') }}">
+                    @csrf
+
                     <!-- Input Name -->
                     <div class="col-md-3">
                         <label for="name">Name</label>
@@ -38,9 +42,10 @@
                             <option value="evening">Evening</option>
                         </select>
                     </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">Confirm</button>
                 </form>
 
-                <button type="submit" class="btn btn-primary mt-3">Confirm</button>
             </div>
         </div>
 
@@ -57,7 +62,26 @@
                     </tr>
                     </thead>
                     <tbody>
+                        @foreach($data as $studentGroup)
+                            <tr>
+                                <td>{{$studentGroup->id}}</td>
+                                <td>{{$studentGroup->name}}</td>
+                                <td>{{$studentGroup->created_at->format('d/m/Y')}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning">
+                                        Edit
+                                    </button>
 
+                                    <form action="{{ route('studentGroups.destroy', $studentGroup->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

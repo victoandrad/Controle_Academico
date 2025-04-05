@@ -14,7 +14,7 @@ class StudentGroupController extends Controller
     public function index()
     {
         $data = StudentGroup::all();
-        return response()->json($data);
+        return view('studentGroups', compact('data'));
     }
 
     /**
@@ -24,10 +24,9 @@ class StudentGroupController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255|unique:student_groups,name',
-            'size' => 'required|integer|min:1',
         ]);
         $data = StudentGroup::query()->create($validated);
-        return response()->json($data, 201);
+        return redirect()->route('studentGroups.index')->with('success', 'Student group created successfully!');
     }
 
     /**
@@ -53,7 +52,6 @@ class StudentGroupController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255|unique:student_groups,name',
-            'size' => 'required|integer|min:1',
         ]);
         try {
             $data = StudentGroup::query()->findOrFail($id)->update($validated);
@@ -73,12 +71,9 @@ class StudentGroupController extends Controller
     {
         try {
             StudentGroup::query()->findOrFail($id)->delete();
-            return response()->noContent();
+            return redirect()->route('studentGroups.index')->with('success', 'Student group deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Student group not found');
         }
     }
 }

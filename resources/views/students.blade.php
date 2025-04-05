@@ -9,7 +9,7 @@
         <div class="card mx-4">
 
             <div class="card-body">
-                <h5 class="card-title">Add new Student</h5>
+                <h5 class="card-title">Add new student</h5>
 
                 <label for="registration_number">Registration number</label>
                 <input type="text" id="registration_number" name="registration_number" placeholder="Insert the registration number" class="form-control mb3">

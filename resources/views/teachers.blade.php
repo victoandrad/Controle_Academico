@@ -7,7 +7,7 @@
         <div class="card mx-4">
 
             <div class="card-body">
-                <h5 class="card-title">Add new Teacher</h5>
+                <h5 class="card-title">Add new teacher</h5>
 
                 <label for="personal_number">Personal number</label>
                 <input type="text" id="personal_number" name="personal_number" placeholder="Insert the personal number" class="form-control mb-3">
