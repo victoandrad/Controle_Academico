@@ -22,3 +22,7 @@ Route::resource('tasks', TaskController::class);
 Route::resource('teachers', TeacherController::class);
 Route::resource('timeslots', TimeslotController::class);
 Route::resource('users', UserController::class);
+
+Route::get('/', function() {
+    return view('admin.desempenho');
+});
