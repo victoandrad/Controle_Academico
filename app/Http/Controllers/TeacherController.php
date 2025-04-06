@@ -13,8 +13,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $data = Teacher::all();
-        return response()->json($data);
+        $teachers = Teacher::all();
+        return view('teachers', compact('teachers'));
     }
 
     /**
@@ -27,8 +27,8 @@ class TeacherController extends Controller
             'name' => 'required|string',
             'user_id' => 'required|exists:users,id',
         ]);
-        $data = Teacher::query()->create($validated);
-        return response()->json($data, 201);
+        Teacher::query()->create($validated);
+        return redirect()->route('teachers')->with('success', 'Teacher created successfully!');
     }
 
     /**
@@ -40,10 +40,7 @@ class TeacherController extends Controller
             $data = Teacher::query()->findOrFail($id);
             return response()->json($data);
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('teachers.index')->with('error', 'Teacher not found');
         }
     }
 
@@ -59,12 +56,9 @@ class TeacherController extends Controller
         ]);
         try {
             $data = Teacher::query()->findOrFail($id)->update($validated);
-            return response()->json($data);
+            return redirect()->route('teachers.index')->with('success', 'Teacher created successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('teachers.index')->with('error', 'Teacher not found');
         }
     }
 
@@ -75,12 +69,9 @@ class TeacherController extends Controller
     {
         try {
             Teacher::query()->findOrFail($id)->delete();
-            return response()->noContent();
+            return redirect()->route('teachers.index')->with('success', 'Teacher deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('teachers.index')->with('error', 'Teacher not found');
         }
     }
 }

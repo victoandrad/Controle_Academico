@@ -13,8 +13,8 @@ class StudentGroupController extends Controller
      */
     public function index()
     {
-        $data = StudentGroup::all();
-        return view('studentGroups', compact('data'));
+        $studentGroups = StudentGroup::all();
+        return view('studentGroups', compact('studentGroups'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StudentGroupController extends Controller
             'name' => 'required|max:255|unique:student_groups,name',
         ]);
         StudentGroup::query()->create($validated);
-        return redirect()->route('studentGroups.index')->with('success', 'Student group created successfully!');
+        return redirect()->route('studentGroups.index')->with('success', 'Student Group created successfully!');
     }
 
     /**
@@ -38,10 +38,7 @@ class StudentGroupController extends Controller
             $data = StudentGroup::query()->findOrFail($id);
             return response()->json($data);
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Student Group not found');
         }
     }
 
@@ -54,13 +51,10 @@ class StudentGroupController extends Controller
             'name' => 'required|max:255|unique:student_groups,name',
         ]);
         try {
-            $data = StudentGroup::query()->findOrFail($id)->update($validated);
-            return response()->json($data);
+            StudentGroup::query()->findOrFail($id)->update($validated);
+            return redirect()->route('studentGroups.index')->with('success', 'Student Group updated successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Student Group not found');
         }
     }
 
@@ -71,9 +65,9 @@ class StudentGroupController extends Controller
     {
         try {
             StudentGroup::query()->findOrFail($id)->delete();
-            return redirect()->route('studentGroups.index')->with('success', 'Student group deleted successfully!');
+            return redirect()->route('studentGroups.index')->with('success', 'Student Group deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('studentGroups.index')->with('error', 'Student group not found');
+            return redirect()->route('studentGroups.index')->with('error', 'Student Group not found');
         }
     }
 }

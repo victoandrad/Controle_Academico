@@ -18,7 +18,7 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         return [
-            'personal_number' => fake()->unique()->randomNumber(8),
+            'personal_number' => fake()->unique()->numerify('###########'),
             'name' => fake()->name(),
             'user_id' => User::query()->inRandomOrder()->first()->id,
         ];

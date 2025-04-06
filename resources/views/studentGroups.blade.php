@@ -63,7 +63,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach($data as $studentGroup)
+                        @foreach($studentGroups as $studentGroup)
                             <tr>
                                 <td>{{$studentGroup->id}}</td>
                                 <td>{{$studentGroup->name}}</td>

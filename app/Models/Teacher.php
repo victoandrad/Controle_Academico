@@ -18,4 +18,9 @@ class Teacher extends Model
         'name',
         'user_id',
     ];
+
+    public function getFormattedPersonalNumberAttribute(): string
+    {
+        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->personal_number);
+    }
 }

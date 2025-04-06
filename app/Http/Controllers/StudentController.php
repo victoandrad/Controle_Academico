@@ -43,10 +43,7 @@ class StudentController extends Controller
             $data = Student::query()->findOrFail($id);
             return response()->json($data);
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('students.index')->with('error', 'Student not found');
         }
     }
 
@@ -62,13 +59,10 @@ class StudentController extends Controller
             'user_id' => 'required|exists:users,id',
         ]);
         try {
-            $data = Student::query()->findOrFail($id)->update($validated);
-            return response()->json($data);
+            Student::query()->findOrFail($id)->update($validated);
+            return redirect()->route('students.index')->with('success', 'Student updated successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('students.index')->with('error', 'Student not found');
         }
     }
 
@@ -81,7 +75,7 @@ class StudentController extends Controller
             Student::query()->findOrFail($id)->delete();
             return redirect()->route('students.index')->with('success', 'Student deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('students.index')->with('error', 'Resource not found');
+            return redirect()->route('students.index')->with('error', 'Student not found');
         }
     }
 }
