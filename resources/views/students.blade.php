@@ -23,7 +23,7 @@
                             <label for="student_group">Student Group</label>
                             <select id="student_group" name="student_group_id" class="form-control">
                                 <option value="">Choose the Student Group</option>
-                            @foreach($studentGroups as $studentGroup)
+                                @foreach($studentGroups as $studentGroup)
                                     <option value="{{$studentGroup->id}}">{{$studentGroup->name}}</option>
                                 @endforeach
                             </select>
@@ -62,7 +62,6 @@
                                     <button type="button" class="btn btn-sm btn-warning">
                                         Edit
                                     </button>
-
                                     <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
