@@ -13,14 +13,13 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label for="registration_number">Registration number</label>
-                            <input type="text" id="registration_number" name="registration_number" placeholder="Insert the registration number" class="form-control mb3">
+                            <input type="text" id="registration_number" name="registration_number" placeholder="Insert the registration number" class="form-control">
                         </div>
                         <div class="col-md-3">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Insert the name" class="form-control mb-3">
+                            <input type="text" id="name" name="name" placeholder="Insert the name" class="form-control">
                         </div>
                         <div class="col-md-3">
-
                             <label for="student_group">Student Group</label>
                             <select id="student_group" name="student_group_id" class="form-control">
                                 <option value="">Choose the Student Group</option>
@@ -46,6 +45,7 @@
                         <th>ID</th>
                         <th>Registration number</th>
                         <th>Name</th>
+                        <th>Student Group Name</th>
                         <th>Entry Date</th>
                         <th>Actions</th>
                     </tr>
@@ -56,8 +56,21 @@
                                 <td>{{$student->id}}</td>
                                 <td>{{$student->formatted_registration_number}}</td>
                                 <td>{{$student->name}}</td>
+                                <td>{{$student->studentGroup->name}}</td>
                                 <td>{{$student->created_at->format('d/m/Y')}}</td>
-                                <td></td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning">
+                                        Edit
+                                    </button>
+
+                                    <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

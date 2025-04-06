@@ -10,7 +10,6 @@
                 <h5 class="card-title">Add new Student Group</h5>
                 <form method="POST" action="{{ route('studentGroups.store') }}">
                     @csrf
-
                     <div class="row">
                         <!-- Input Name -->
                         <div class="col-md-3">

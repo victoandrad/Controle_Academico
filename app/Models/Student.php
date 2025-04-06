@@ -23,4 +23,9 @@ class Student extends Model
     {
         return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->registration_number);
     }
+
+    public function studentGroup()
+    {
+        return $this->belongsTo(StudentGroup::class);
+    }
 }

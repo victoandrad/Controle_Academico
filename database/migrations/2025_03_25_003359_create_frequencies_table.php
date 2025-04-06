@@ -22,6 +22,8 @@ return new class extends Migration
 
             $table->unsignedBigInteger('curriculum_unit_id');
             $table->foreign('curriculum_unit_id')->references('id')->on('curriculum_units');
+
+            $table->softDeletes();
         });
     }
 
