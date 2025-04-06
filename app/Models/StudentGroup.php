@@ -15,4 +15,13 @@ class StudentGroup extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function students() {
+        return $this->hasMany(Student::class, 'student_group_id', 'id');
+    }
+
+    public function size(): int
+    {
+        return $this->students()->count();
+    }
 }
