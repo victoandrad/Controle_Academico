@@ -3,7 +3,6 @@
 @section('title', 'Student Groups')
 
 @section('content')
-    <x-sidebar expand="true" />
     <div class="main">
         <h1 class="m-4">Student Groups</h1>
         <div class="card mx-4">
@@ -82,7 +81,7 @@
                                     <form action="{{ route('studentGroups.destroy', $studentGroup->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                        <button type="submit" class="btn btn-sm btn-danger">
                                             Delete
                                         </button>
                                     </form>
