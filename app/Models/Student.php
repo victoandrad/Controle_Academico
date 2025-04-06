@@ -18,4 +18,9 @@ class Student extends Model
         'student_group_id',
         'user_id',
     ];
+
+    public function getFormattedRegistrationNumberAttribute(): string
+    {
+        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->registration_number);
+    }
 }

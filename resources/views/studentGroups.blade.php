@@ -6,10 +6,8 @@
     <div class="main">
         <h1 class="m-4">Student Groups</h1>
         <div class="card mx-4">
-
             <div class="card-body">
                 <h5 class="card-title">Add new Student Group</h5>
-
                 <form method="POST" action="{{ route('studentGroups.store') }}">
                     @csrf
 
@@ -49,7 +47,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
 

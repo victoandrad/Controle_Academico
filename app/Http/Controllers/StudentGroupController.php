@@ -25,7 +25,7 @@ class StudentGroupController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255|unique:student_groups,name',
         ]);
-        $data = StudentGroup::query()->create($validated);
+        StudentGroup::query()->create($validated);
         return redirect()->route('studentGroups.index')->with('success', 'Student group created successfully!');
     }
 

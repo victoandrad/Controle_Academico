@@ -20,7 +20,7 @@ class StudentFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'registration_number' => fake()->unique()->randomNumber(8),
+            'registration_number' => fake()->unique()->numerify('###########'),
             'student_group_id' => StudentGroup::query()->inRandomOrder()->first()->id,
             'user_id' => User::query()->inRandomOrder()->first()->id,
         ];

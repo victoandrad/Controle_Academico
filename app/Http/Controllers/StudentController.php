@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $data = Student::all();
-        return response()->json($data);
+        $students = Student::all();
+        $studentGroups = StudentGroup::all();
+        return view('students', compact('students', 'studentGroups'));
     }
 
     /**
@@ -28,8 +30,8 @@ class StudentController extends Controller
             'student_group_id' => 'required|exists:student_groups,id',
             'user_id' => 'required|exists:users,id',
         ]);
-        $data = Student::query()->create($validated);
-        return response()->json($data, 201);
+        Student::query()->create($validated);
+        return redirect()->route('students.index')->with('success', 'Student created successfully!');
     }
 
     /**
@@ -77,12 +79,9 @@ class StudentController extends Controller
     {
         try {
             Student::query()->findOrFail($id)->delete();
-            return response()->noContent();
+            return redirect()->route('students.index')->with('success', 'Student deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('students.index')->with('error', 'Resource not found');
         }
     }
 }
