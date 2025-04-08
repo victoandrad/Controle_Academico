@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lesson extends Model
@@ -21,23 +22,28 @@ class Lesson extends Model
         'curriculum_unit_id',
     ];
 
-    public function room() {
+    public function room(): BelongsTo
+    {
         return $this->belongsTo(Room::class);
     }
 
-    public function timeslot() {
+    public function timeslot(): BelongsTo
+    {
         return $this->belongsTo(Timeslot::class);
     }
 
-    public function teacher() {
+    public function teacher(): BelongsTo
+    {
         return $this->belongsTo(Teacher::class);
     }
 
-    public function studentGroup() {
+    public function studentGroup(): BelongsTo
+    {
         return $this->belongsTo(StudentGroup::class);
     }
 
-    public function curriculumUnit() {
+    public function curriculumUnit(): BelongsTo
+    {
         return $this->belongsTo(CurriculumUnit::class);
     }
 }
