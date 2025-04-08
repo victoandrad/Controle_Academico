@@ -8,6 +8,7 @@ use App\Models\Student;
 use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class FrequencyController extends Controller
@@ -17,7 +18,8 @@ class FrequencyController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::all();
+        $user = Auth::user();
+        $lessons = $user->teacher->lessons;
         return view('admin.frequencies', compact('lessons'));
     }
 

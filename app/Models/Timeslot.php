@@ -22,6 +22,6 @@ class Timeslot extends Model
 
     public function lessons(): HasMany
     {
-        return $this->hasMany(Lesson::class, 'lesson_id', 'id');
+        return $this->hasMany(Lesson::class, 'timeslot_id', 'id');
     }
 }
