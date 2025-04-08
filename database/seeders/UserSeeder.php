@@ -17,10 +17,5 @@ class UserSeeder extends Seeder
             'name' => 'Victor Andrade',
             'email' => 'victoandrad@edu.unifil.br',
         ]);
-
-        User::factory()->create([
-            'name' => 'Administrador',
-            'email' => 'admin@edu.unifil.br',
-        ]);
     }
 }

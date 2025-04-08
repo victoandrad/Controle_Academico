@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Frequency;
+use App\Models\Lesson;
 use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ class FrequencyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $frequencies = Frequency::all();
         $studentGroups = StudentGroup::all();

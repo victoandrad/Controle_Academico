@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a href="" class="sidebar-link d-flex align-items-center">
+                <a href="{{route('frequencies.index')}}" class="sidebar-link d-flex align-items-center">
                     <i class="lni lni-agenda"></i>
                     <span>Frequency</span>
                 </a>
