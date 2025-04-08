@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Timeslot extends Model
@@ -18,4 +19,9 @@ class Timeslot extends Model
         'start_time',
         'end_time',
     ];
+
+    public function lessons(): HasMany
+    {
+        return $this->hasMany(Lesson::class, 'lesson_id', 'id');
+    }
 }

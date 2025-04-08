@@ -23,6 +23,11 @@ class StudentGroup extends Model
         return $this->hasMany(Student::class, 'student_group_id', 'id');
     }
 
+    public function lessons(): HasMany
+    {
+        return $this->hasMany(Lesson::class, 'lesson_id', 'id');
+    }
+
     public function size(): int
     {
         return $this->students()->count();

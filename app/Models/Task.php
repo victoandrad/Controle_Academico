@@ -28,7 +28,7 @@ class Task extends Model
         return $this->belongsTo(Student::class, 'student_id');
     }
 
-    public function curriculum_unit(): BelongsTo
+    public function curriculumUnit(): BelongsTo
     {
         return $this->belongsTo(CurriculumUnit::class, 'curriculum_unit_id');
     }
