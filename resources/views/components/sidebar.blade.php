@@ -7,7 +7,7 @@
                 <i class="lni lni-grid-alt"></i>
             </button>
             <div class="sidebar-logo">
-                <a href="#">Hello, Student!</a>
+                <a href="#">Hello, {{ explode(' ', auth()->user()->name)[0] }}!</a>
             </div>
         </div>
         <ul class="sidebar-nav">
@@ -26,13 +26,13 @@
             <li class="sidebar-item">
                 <a href="{{route('frequencies.index')}}" class="sidebar-link d-flex align-items-center">
                     <i class="lni lni-agenda"></i>
-                    <span>Frequency</span>
+                    <span>Frequencies</span>
                 </a>
             </li>
             <li class="sidebar-item">
                 <a href="" class="sidebar-link d-flex align-items-center">
                     <i class="lni lni-graduation-cap-1"></i>
-                    <span>Performance</span>
+                    <span>Performances</span>
                 </a>
             </li>
             <li class="sidebar-item">

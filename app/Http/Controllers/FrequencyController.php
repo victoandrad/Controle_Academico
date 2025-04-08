@@ -15,9 +15,11 @@ class FrequencyController extends Controller
      */
     public function index(Request $request)
     {
-        $frequencies = Frequency::all();
         $studentGroups = StudentGroup::all();
-        return view('admin.frequencies', compact('frequencies', 'studentGroups'));
+
+        $lessons = Lesson::query()->where('teacher_id', '20')->get();
+
+        return view('admin.frequencies', compact('studentGroups', 'lessons'));
     }
 
     /**

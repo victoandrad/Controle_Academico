@@ -17,5 +17,6 @@ class Frequency extends Model
         'attended',
         'student_id',
         'curriculum_unit_id',
+        'date',
     ];
 }

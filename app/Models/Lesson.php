@@ -20,4 +20,24 @@ class Lesson extends Model
         'student_group_id',
         'curriculum_unit_id',
     ];
+
+    public function room() {
+        return $this->belongsTo(Room::class);
+    }
+
+    public function timeslot() {
+        return $this->belongsTo(Timeslot::class);
+    }
+
+    public function teacher() {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function studentGroup() {
+        return $this->belongsTo(StudentGroup::class);
+    }
+
+    public function curriculumUnit() {
+        return $this->belongsTo(CurriculumUnit::class);
+    }
 }
