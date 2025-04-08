@@ -16,13 +16,14 @@ return new class extends Migration
             $table->timestamps();
 
             $table->boolean('attended');
+            $table->boolean('excused');
             $table->date('date');
 
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
 
-            $table->unsignedBigInteger('curriculum_unit_id');
-            $table->foreign('curriculum_unit_id')->references('id')->on('curriculum_units');
+            $table->unsignedBigInteger('lesson_id');
+            $table->foreign('lesson_id')->references('id')->on('lessons');
 
             $table->softDeletes();
         });

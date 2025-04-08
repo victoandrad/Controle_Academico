@@ -40,6 +40,5 @@ class TeacherSeeder extends Seeder
         Teacher::factory()->withUser(['name' => 'Tania Camila Kochmanscky Goulart', 'email' => 'tania.goulart@email.com', 'password' => '12345678'])->create();
         Teacher::factory()->withUser(['name' => 'Tiago Ravache', 'email' => 'tiago.ravache@email.com', 'password' => '12345678'])->create();
         Teacher::factory()->withUser(['name' => 'Wilson Sanches', 'email' => 'wilson.sanches@email.com', 'password' => '12345678'])->create();
-
     }
 }

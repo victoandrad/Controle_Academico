@@ -14,83 +14,79 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
-    Route::resource('curriculumUnits', CurriculumUnitController::class)->names([
-        'index' => 'curriculumUnits.index',
-        'store' => 'curriculumUnits.store',
-        'show' => 'curriculumUnits.show',
-        'update' => 'curriculumUnits.update',
-        'destroy' => 'curriculumUnits.destroy',
-    ]);
-    Route::resource('frequencies', FrequencyController::class)->names([
-        'index' => 'frequencies.index',
-        'store' => 'frequencies.store',
-        'show' => 'frequencies.show',
-        'update' => 'frequencies.update',
-        'destroy' => 'frequencies.destroy',
-    ]);
-    Route::resource('lessons', LessonController::class)->names([
-        'index' => 'lessons.index',
-        'store' => 'lessons.store',
-        'show' => 'lessons.show',
-        'update' => 'lessons.update',
-        'destroy' => 'lessons.destroy',
-    ]);
-    Route::resource('rooms', RoomController::class)->names([
-        'index' => 'rooms.index',
-        'store' => 'rooms.store',
-        'show' => 'rooms.show',
-        'update' => 'rooms.update',
-        'destroy' => 'rooms.destroy',
-    ]);
-    Route::resource('students', StudentController::class)->names([
-        'index' => 'students.index',
-        'store' => 'students.store',
-        'show' => 'students.show',
-        'update' => 'students.update',
-        'destroy' => 'students.destroy',
-    ]);
-    Route::resource('studentGroups', StudentGroupController::class)->names([
-        'index' => 'studentGroups.index',
-        'store' => 'studentGroups.store',
-        'show' => 'studentGroups.show',
-        'update' => 'studentGroups.update',
-        'destroy' => 'studentGroups.destroy',
-    ]);
-    Route::resource('tasks', TaskController::class)->names([
-        'index' => 'tasks.index',
-        'store' => 'tasks.store',
-        'show' => 'tasks.show',
-        'update' => 'tasks.update',
-        'destroy' => 'tasks.destroy',
-    ]);
-    Route::resource('teachers', TeacherController::class)->names([
-        'index' => 'teachers.index',
-        'store' => 'teachers.store',
-        'show' => 'teachers.show',
-        'update' => 'teachers.update',
-        'destroy' => 'teachers.destroy',
-    ]);
-    Route::resource('timeslots', TimeslotController::class)->names([
-        'index' => 'timeslots.index',
-        'store' => 'timeslots.store',
-        'show' => 'timeslots.show',
-        'update' => 'timeslots.update',
-        'destroy' => 'timeslots.destroy',
-    ]);
-    Route::resource('users', UserController::class)->names([
-        'index' => 'users.index',
-        'store' => 'users.store',
-        'show' => 'users.show',
-        'update' => 'users.update',
-        'destroy' => 'users.destroy',
-    ]);
-    Route::resource('tasks', TaskController::class)->names([
-        'index' => 'tasks.index',
-        'store' => 'tasks.store',
-        'show' => 'tasks.show',
-        'update' => 'tasks.update',
-        'destroy' => 'tasks.destroy',
-    ]);
+
+        // Curriculum Units
+        Route::get('/curriculumUnits', [CurriculumUnitController::class, 'index'])->name('curriculumUnits.index');
+        Route::post('/curriculumUnits', [CurriculumUnitController::class, 'store'])->name('curriculumUnits.store');
+        Route::get('/curriculumUnits/{curriculumUnit}', [CurriculumUnitController::class, 'show'])->name('curriculumUnits.show');
+        Route::put('/curriculumUnits/{curriculumUnit}', [CurriculumUnitController::class, 'update'])->name('curriculumUnits.update');
+        Route::delete('/curriculumUnits/{curriculumUnit}', [CurriculumUnitController::class, 'destroy'])->name('curriculumUnits.destroy');
+
+        // Frequencies
+        Route::get('/frequencies', [FrequencyController::class, 'index'])->name('frequencies.index');
+        Route::post('/frequencies', [FrequencyController::class, 'store'])->name('frequencies.store');
+        Route::get('/frequencies/{frequency}', [FrequencyController::class, 'show'])->name('frequencies.show');
+        Route::put('/frequencies/{frequency}', [FrequencyController::class, 'update'])->name('frequencies.update');
+        Route::delete('/frequencies/{frequency}', [FrequencyController::class, 'destroy'])->name('frequencies.destroy');
+
+        // Lessons
+        Route::get('/lessons', [LessonController::class, 'index'])->name('lessons.index');
+        Route::post('/lessons', [LessonController::class, 'store'])->name('lessons.store');
+        Route::get('/lessons/{lesson}', [LessonController::class, 'show'])->name('lessons.show');
+        Route::put('/lessons/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
+        Route::delete('/lessons/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+        Route::get('lessons/{lesson}/students', [LessonController::class, 'getStudents']);
+        Route::get('lessons/{lesson}/frequencies', [LessonController::class, 'getFrequencies']);
+
+        // Rooms
+        Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
+        Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
+        Route::get('/rooms/{room}', [RoomController::class, 'show'])->name('rooms.show');
+        Route::put('/rooms/{room}', [RoomController::class, 'update'])->name('rooms.update');
+        Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+
+        // Students
+        Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+        Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+        Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
+        Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
+        Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+
+        // Student Groups
+        Route::get('/studentGroups', [StudentGroupController::class, 'index'])->name('studentGroups.index');
+        Route::post('/studentGroups', [StudentGroupController::class, 'store'])->name('studentGroups.store');
+        Route::get('/studentGroups/{studentGroup}', [StudentGroupController::class, 'show'])->name('studentGroups.show');
+        Route::put('/studentGroups/{studentGroup}', [StudentGroupController::class, 'update'])->name('studentGroups.update');
+        Route::delete('/studentGroups/{studentGroup}', [StudentGroupController::class, 'destroy'])->name('studentGroups.destroy');
+
+        // Tasks
+        Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+        Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+        Route::get('/tasks/{task}', [TaskController::class, 'show'])->name('tasks.show');
+        Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+        Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+        // Teachers
+        Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
+        Route::post('/teachers', [TeacherController::class, 'store'])->name('teachers.store');
+        Route::get('/teachers/{teacher}', [TeacherController::class, 'show'])->name('teachers.show');
+        Route::put('/teachers/{teacher}', [TeacherController::class, 'update'])->name('teachers.update');
+        Route::delete('/teachers/{teacher}', [TeacherController::class, 'destroy'])->name('teachers.destroy');
+
+        // Timeslots
+        Route::get('/timeslots', [TimeslotController::class, 'index'])->name('timeslots.index');
+        Route::post('/timeslots', [TimeslotController::class, 'store'])->name('timeslots.store');
+        Route::get('/timeslots/{timeslot}', [TimeslotController::class, 'show'])->name('timeslots.show');
+        Route::put('/timeslots/{timeslot}', [TimeslotController::class, 'update'])->name('timeslots.update');
+        Route::delete('/timeslots/{timeslot}', [TimeslotController::class, 'destroy'])->name('timeslots.destroy');
+
+        // Users
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

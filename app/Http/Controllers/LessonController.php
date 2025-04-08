@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Frequency;
 use App\Models\Lesson;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
+    public function getStudents($id) {
+        $lesson = Lesson::with('studentGroup.students.user')->findOrFail($id);
+        return response()->json($lesson->studentGroup->students);
+    }
+
+    public function getFrequencies($id) {
+        $frequencies = Frequency::with('student.user')
+            ->where('lesson_id', $id)
+            ->orderBy('date', 'desc')
+            ->get();
+        return response()->json($frequencies);
+    }
+
     /**
      * Display a listing of the resource.
      */

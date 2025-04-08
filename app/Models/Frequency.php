@@ -16,8 +16,9 @@ class Frequency extends Model
 
     protected $fillable = [
         'attended',
+        'excused',
         'student_id',
-        'curriculum_unit_id',
+        'lesson_id',
         'date',
     ];
 

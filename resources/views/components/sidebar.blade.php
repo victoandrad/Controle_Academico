@@ -36,11 +36,11 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link collapsed d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                <a href="#" class="sidebar-link collapsed d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#register" aria-expanded="false" aria-controls="auth">
                     <i class="lni lni-pencil-1"></i>
                     <span>Register</span>
                 </a>
-                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                <ul id="register" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                     <li class="sidebar-item">
                         <a href="{{route('studentGroups.index')}}" class="sidebar-link">Student Group</a>
                     </li>
@@ -54,7 +54,7 @@
             </li>
         </ul>
         <div class="sidebar-footer">
-            <a href="#" class="sidebar-link" id="logout-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a href="#" class="sidebar-link d-flex align-items-center" id="logout-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="lni lni-exit"></i>
                 <span>Log-out</span>
             </a>

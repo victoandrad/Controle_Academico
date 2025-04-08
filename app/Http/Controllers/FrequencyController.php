@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Frequency;
 use App\Models\Lesson;
+use App\Models\Student;
 use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class FrequencyController extends Controller
 {
@@ -15,11 +17,8 @@ class FrequencyController extends Controller
      */
     public function index(Request $request)
     {
-        $studentGroups = StudentGroup::all();
-
         $lessons = Lesson::query()->where('teacher_id', '20')->get();
-
-        return view('admin.frequencies', compact('studentGroups', 'lessons'));
+        return view('admin.frequencies', compact('lessons'));
     }
 
     /**
@@ -27,14 +26,38 @@ class FrequencyController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'attended' => 'required|boolean',
-            'student_id' => 'required|exists:students,id',
-            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+        $request->validate([
+            'lesson_id' => 'required|exists:lessons,id',
+            'frequency_date' => 'required|date',
         ]);
-        $data = Frequency::query()->create($validated);
-        return response()->json($data, 201);
+
+        $lessonId = $request->input('lesson_id');
+        $date = $request->input('frequency_date');
+
+        foreach ($request->all() as $key => $value) {
+            if (Str::startsWith($key, 'student_') && !Str::endsWith($key, '_excused')) {
+                $studentId = explode('_', $key)[1];
+
+                if (!Student::query()->where('id', $studentId)->exists()) {
+                    continue;
+                }
+
+                $attended = $value === 'present' ? 1 : 0;
+                $excused = $request->has("student_{$studentId}_excused");
+
+                Frequency::query()->create([
+                    'lesson_id' => $lessonId,
+                    'student_id' => $studentId,
+                    'date' => $date,
+                    'attended' => $attended,
+                    'excused' => $excused,
+                ]);
+            }
+        }
+
+        return redirect()->route('frequencies.index')->with('success', 'Frequencies created successfully!');
     }
+
 
     /**
      * Display the specified resource.
