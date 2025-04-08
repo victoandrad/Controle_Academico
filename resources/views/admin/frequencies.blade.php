@@ -2,34 +2,34 @@
 
 @section('content')
     <div class="main">
-        <h1 class="mx-4">Bem-vindo à página inicial</h1>
+        <h1 class="m-4">Tasks</h1>
         <div class="card mx-4">
             <div class="card-body">
-                <h5 class="card-title">Todas as turmas cadastradas</h5>
+                <h5 class="card-title">Student Groups</h5>
                 <table class="table table-striped table-bordered table-layout-fixed">
                     <thead>
                     <tr>
-                        <th>ID Turma</th>
-                        <th>Informações</th>
-                        <th>Registrar Frequência</th>
-                        <th>Visualizar</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Add Frequency</th>
+                        <th>View Frequency</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Informações da turma 1</td>
-                        <td>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistrarFrequencia">
-                                Registrar Frequência
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalVisualizarFrequencia">
-                                Visualizar Frequência
-                            </button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Informações da turma 1</td>
+                            <td>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistrarFrequencia">
+                                    Registrar Frequência
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalVisualizarFrequencia">
+                                    Visualizar Frequência
+                                </button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

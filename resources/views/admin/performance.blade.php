@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="main">
-        <h1 class="mx-4">Bem-vindo à página de Desempenho</h1>
+        <h1 class="m-4">Bem-vindo à página de Desempenho</h1>
 
         <div class="card mx-4">
             <div class="card-body">
