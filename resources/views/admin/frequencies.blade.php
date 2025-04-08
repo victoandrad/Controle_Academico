@@ -36,10 +36,10 @@
         </div>
     </div>
 
-{{--    <x-modal-registrar-frequencia :alunos="[['id' => 1, 'nome' => 'Aluno 1'], ['id' => 2, 'nome' => 'Aluno 2']]" />--}}
-{{--    <!-- Incluindo o componente modal e passando a variável $frequencias -->--}}
-{{--    <x-modal-visualizar-frequencia :frequencias="[--}}
-{{--        ['id' => 1, 'nome' => 'Aluno 1', 'data' => '2025-03-28', 'descricao' => 'Atividade de Matemática', 'status' => 'Presente'],--}}
-{{--        ['id' => 2, 'nome' => 'Aluno 2', 'data' => '2025-03-28', 'descricao' => 'Atividade de Português', 'status' => 'Ausente']--}}
-{{--    ]" />--}}
+    <x-modal-registrar-frequencia :alunos="[['id' => 1, 'nome' => 'Aluno 1'], ['id' => 2, 'nome' => 'Aluno 2']]" />
+    <!-- Incluindo o componente modal e passando a variável $frequencias -->
+    <x-modal-visualizar-frequencia :frequencias="[
+        ['id' => 1, 'nome' => 'Aluno 1', 'data' => '2025-03-28', 'descricao' => 'Atividade de Matemática', 'status' => 'Presente'],
+        ['id' => 2, 'nome' => 'Aluno 2', 'data' => '2025-03-28', 'descricao' => 'Atividade de Português', 'status' => 'Ausente']
+    ]" />
 @endsection

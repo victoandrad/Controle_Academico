@@ -3,7 +3,6 @@
 use App\Http\Controllers\CurriculumUnitController;
 use App\Http\Controllers\FrequencyController;
 use App\Http\Controllers\LessonController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentGroupController;
@@ -84,20 +83,10 @@ Route::resource('users', UserController::class)->names([
     'destroy' => 'users.destroy',
 ]);
 
-Route::get('/frequency', function () {
-    return view('admin.frequencies');
-})->name('admin.frequencies');
-
-Route::get('/', function () {
-    return view('admin.home');
-})->name('admin.home');
-
-Route::get('/performance', function () {
-    return view('admin.performance');
-})->name('admin.performance');
-
-Route::get('/tasks', function () {
-    return view('admin.tasks');
-})->name('admin.tasks');
-
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::resource('tasks', TaskController::class)->names([
+    'index' => 'tasks.index',
+    'store' => 'tasks.store',
+    'show' => 'tasks.show',
+    'update' => 'tasks.update',
+    'destroy' => 'tasks.destroy',
+]);

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+use App\Models\StudentGroup;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -13,8 +15,10 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $data = Task::all();
-        return response()->json($data);
+        $tasks = Task::all();
+        $students = Student::all();
+        $studentGroups = StudentGroup::all();
+        return view('admin.tasks', compact('tasks', 'students', 'studentGroups'));
     }
 
     /**
@@ -31,7 +35,7 @@ class TaskController extends Controller
             'curriculum_unit_id' => 'required|exists:curriculum_units,id',
         ]);
         $data = Task::query()->create($validated);
-        return response()->json($data, 201);
+        return redirect()->route('studentGroups.index')->with('success', 'Task created successfully!');
     }
 
     /**
@@ -43,10 +47,7 @@ class TaskController extends Controller
             $data = Task::query()->findOrFail($id);
             return response()->json($data);
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
         }
     }
 
@@ -65,12 +66,9 @@ class TaskController extends Controller
         ]);
         try {
             $data = Task::query()->findOrFail($id)->update($validated);
-            return response()->json($data);
+            return redirect()->route('studentGroups.index')->with('success', 'Task updated successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
         }
     }
 
@@ -81,12 +79,9 @@ class TaskController extends Controller
     {
         try {
             Task::query()->findOrFail($id)->delete();
-            return response()->noContent();
+            return redirect()->route('studentGroups.index')->with('success', 'Task deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'error' => $e->getMessage(),
-                'message' => 'Resource not found'
-            ], 404);
+            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
         }
     }
 }

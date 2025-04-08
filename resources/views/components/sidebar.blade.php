@@ -11,10 +11,10 @@
             </div>
         </div>
         <ul class="sidebar-nav">
-            <li class="sidebar-item"><a href="{{ route('admin.home') }}" class="sidebar-link"><i class="lni lni-home-2"></i><span>Home</span></a></li>
-            <li class="sidebar-item"><a href="{{ route('admin.tasks') }}" class="sidebar-link"><i class="lni lni-books-2"></i><span>Tasks</span></a></li>
-            <li class="sidebar-item"><a href="{{ route('admin.frequencies') }}" class="sidebar-link"><i class="lni lni-agenda"></i><span>Frequency</span></a></li>
-            <li class="sidebar-item"><a href="{{ route('admin.performance') }}" class="sidebar-link"><i class="lni lni-graduation-cap-1"></i><span>Performance</span></a></li>
+            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="lni lni-home-2"></i><span>Home</span></a></li>
+            <li class="sidebar-item"><a href="{{ route('tasks.index') }}" class="sidebar-link"><i class="lni lni-books-2"></i><span>Tasks</span></a></li>
+            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="lni lni-agenda"></i><span>Frequency</span></a></li>
+            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="lni lni-graduation-cap-1"></i><span>Performance</span></a></li>
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
                    data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
