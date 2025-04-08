@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Teachers | Dashboard')
+
 @section('content')
     <div class="main">
         <h1 class="m-4">Teachers</h1>

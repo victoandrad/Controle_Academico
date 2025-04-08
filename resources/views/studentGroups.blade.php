@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Student Groups')
+@section('title', 'Student Groups | Dashboard')
 
 @section('content')
     <div class="main">

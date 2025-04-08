@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home | Dashboard')
+
 @section('content')
     <div class="main p-3" id="borda">
         <main class="content px-3 py-2">

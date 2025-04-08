@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Performance | Dashboard')
+
 @section('content')
     <div class="main">
         <h1 class="m-4">Bem-vindo à página de Desempenho</h1>
