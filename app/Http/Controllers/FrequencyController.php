@@ -15,9 +15,9 @@ class FrequencyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $lessons = Lesson::query()->where('teacher_id', '20')->get();
+        $lessons = Lesson::all();
         return view('admin.frequencies', compact('lessons'));
     }
 

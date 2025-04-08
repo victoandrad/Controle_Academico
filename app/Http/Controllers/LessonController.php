@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
-    public function getStudents($id) {
+    public function getStudents($id)
+    {
         $lesson = Lesson::with('studentGroup.students.user')->findOrFail($id);
         return response()->json($lesson->studentGroup->students);
     }
 
-    public function getFrequencies($id) {
+    public function getFrequencies($id)
+    {
         $frequencies = Frequency::with('student.user')
             ->where('lesson_id', $id)
             ->orderBy('date', 'desc')

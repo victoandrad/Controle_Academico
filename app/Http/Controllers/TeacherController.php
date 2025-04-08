@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lesson;
 use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -9,6 +10,12 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
+    public function getLessons($id)
+    {
+        $lessons = Lesson::query()->where('teacher_id', $id)->get();
+        return response()->json($lessons);
+    }
+
     /**
      * Display a listing of the resource.
      */

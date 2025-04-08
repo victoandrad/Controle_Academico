@@ -72,6 +72,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/teachers/{teacher}', [TeacherController::class, 'show'])->name('teachers.show');
         Route::put('/teachers/{teacher}', [TeacherController::class, 'update'])->name('teachers.update');
         Route::delete('/teachers/{teacher}', [TeacherController::class, 'destroy'])->name('teachers.destroy');
+        Route::get('/teachers/{teacher}/lessons', [TeacherController::class, 'getLessons']);
 
         // Timeslots
         Route::get('/timeslots', [TimeslotController::class, 'index'])->name('timeslots.index');
