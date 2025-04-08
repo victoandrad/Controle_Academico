@@ -15,12 +15,10 @@ class Teacher extends Model
 
     protected $fillable = [
         'personal_number',
-        'name',
         'user_id',
     ];
 
-    public function getFormattedPersonalNumberAttribute(): string
-    {
-        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->personal_number);
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }

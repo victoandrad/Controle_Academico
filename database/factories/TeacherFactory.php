@@ -19,8 +19,15 @@ class TeacherFactory extends Factory
     {
         return [
             'personal_number' => fake()->unique()->numerify('###########'),
-            'name' => fake()->name(),
-            'user_id' => User::query()->inRandomOrder()->first()->id,
+            'user_id' => null,
         ];
+    }
+
+    public function withUser(array $userData = []): static
+    {
+        return $this->state(function (array $attributes) use ($userData) {
+            $user = User::factory()->create($userData);
+            return ['user_id' => $user->id];
+        });
     }
 }

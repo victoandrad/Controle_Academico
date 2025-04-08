@@ -9,6 +9,9 @@ class Student extends Model
 {
     use HasFactory;
 
+    /**
+     * @var \Illuminate\Support\HigherOrderCollectionProxy|mixed
+     */
     protected $table = 'students';
     protected $primaryKey = 'id';
 
@@ -19,13 +22,12 @@ class Student extends Model
         'user_id',
     ];
 
-    public function getFormattedRegistrationNumberAttribute(): string
-    {
-        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $this->registration_number);
-    }
-
     public function studentGroup()
     {
         return $this->belongsTo(StudentGroup::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }

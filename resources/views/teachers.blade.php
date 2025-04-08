@@ -5,19 +5,27 @@
         <h1 class="m-4">Teachers</h1>
         <div class="card mx-4">
             <div class="card-body">
-                <h5 class="card-title">Add new Teacher</h5>
+                <h5 class="card-title fw-bold">Add new Teacher</h5>
                 <form method="POST" action="{{ route('teachers.store') }}">
                     @csrf
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div class="row gy-3">
+                        <div class="col-md-3">
                             <label for="personal_number">Personal number</label>
-                            <input type="text" id="personal_number" name="personal_number" placeholder="Insert the personal number" class="form-control">
+                            <input type="text" id="personal_number" name="personal_number" placeholder="Personal number" class="form-control mt-1">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Insert the name" class="form-control">
+                            <input type="text" id="name" name="name" placeholder="Name" class="form-control mt-1">
                         </div>
-                        <div class="col-md-4 d-flex align-items-end">
+                        <div class="col-md-3">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" class="form-control mt-1">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password" class="form-control mt-1">
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
                             <button type="submit" class="btn btn-primary w-100">Confirm</button>
                         </div>
                     </div>
@@ -26,14 +34,14 @@
         </div>
         <div class="card mx-4">
             <div class="card-body">
-                <h5 class="card-title">List of Teachers</h5>
+                <h5 class="card-title fw-bold">List of Teachers</h5>
                 <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>ID</th>
                         <th>Personal number</th>
                         <th>Name</th>
-                        <th>Entry Date</th>
+                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -41,9 +49,9 @@
                         @foreach($teachers as $teacher)
                             <tr>
                                 <td>{{$teacher->id}}</td>
-                                <td>{{$teacher->formatted_personal_number}}</td>
-                                <td>{{$teacher->name}}</td>
-                                <td>{{$teacher->created_at->format('d/m/Y')}}</td>
+                                <td>{{$teacher->personal_number}}</td>
+                                <td>{{$teacher->user->name}}</td>
+                                <td>{{$teacher->user->email}}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-warning">
                                         Edit

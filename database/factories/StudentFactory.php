@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Student;
 use App\Models\StudentGroup;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,10 +20,18 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
             'registration_number' => fake()->unique()->numerify('###########'),
             'student_group_id' => StudentGroup::query()->inRandomOrder()->first()->id,
-            'user_id' => User::query()->inRandomOrder()->first()->id,
+            'user_id' => null,
         ];
     }
+
+    public function withUser(array $userData = []): static
+    {
+        return $this->state(function (array $attributes) use ($userData) {
+            $user = User::factory()->create($userData);
+            return ['user_id' => $user->id];
+        });
+    }
+
 }

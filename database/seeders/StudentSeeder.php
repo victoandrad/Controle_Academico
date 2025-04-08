@@ -13,229 +13,61 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        Student::factory(1)->create([
-            'name' => 'Joao Vitor Tupan Dias'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Enzo Gardenal Fenato'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Pedro Felipe Vaitkevicius Ferreira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Carlos Alexandre Ferreira Granado'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Davi Guilherme'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Fernando Ferreira Costa Junior'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Pedro Alpino Levandowski'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Rafael Previatto De Morais'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gustavo Da Silva Ramos'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Felipe Caldeira Akryghti'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Antonio Marcos Brito De Almeida'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Felipe Marconi Gomes De Araujo'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Renato Teixeira Barreto'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Daniel Sampaio Bezerra'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gabriel Junqueira De Lima Carneiro'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gustavo Lamberty Carranza'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Samir Kaled Ali Chehade'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Arthur Vinicius De Oliveira Constantino'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Pedro Augusto Lemos Da Costa'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Pedro Henrique Demian'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Caio Henrique Domingues'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gabriel Henrique Trindade Dona'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Yuri Costa E Silva Eduardo'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gustavo Farias Ferreira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Murilo Choiti Fussuma'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Joao Felipe Da Silva Garcia'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Vitor Gabriel Dos Santos Goncalves'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Fernando Barros Greca'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Vinicius Tofano Henriques'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Lia Naomi Hoida'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Fernanda Tozzi Honorio'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gabriel Eiti Yamazaki Kikuchi'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Felipe Martins De Lima'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Miguel Lima'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Nycolas Rozisca Moreno'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gustavo Antonio Silva Oliveira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Lucas Jose Gomes Oliveira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Marcos Vinicios Florencio De Oliveira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Igor Domingues Pereira'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Ana Carolina Villas Boas Primo'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Alexksandro Fernandes De Queiroz'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Leonardo Moreira Arcebispo De Sa'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Nicholas Gabriel Soares Yamasita Sales'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Lucas Tanaka Sato'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Caique Marques Serpeloni'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Joao Gabriel Romanin Seti'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Joao Victor Alves Da Silva'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Mariana Gabrielly Soares Silva'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Pedro Gabriel Bevilaqua Silva'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Rafael Ferreira Da Silva'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Guilherme Ramos Soares'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Samuel Luiz Silva Souza'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Joao Rafael Lins Menezes Tadeu'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Felipe Andre Tironi'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Gustavo Montanini Victor'
-        ]);
-
-        Student::factory(1)->create([
-            'name' => 'Murilo Bertalha Volante'
-        ]);
-
+        Student::factory()->withUser(['name' => 'Joao Vitor Tupan Dias', 'email' => 'joao.dias@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Enzo Gardenal Fenato', 'email' => 'enzo.fenato@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Pedro Felipe Vaitkevicius Ferreira', 'email' => 'pedro.ferreira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Carlos Alexandre Ferreira Granado', 'email' => 'carlos.granado@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Davi Guilherme', 'email' => 'davi.guilherme@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Fernando Ferreira Costa Junior', 'email' => 'fernando.junior@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Pedro Alpino Levandowski', 'email' => 'pedro.levandowski@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Rafael Previatto De Morais', 'email' => 'rafael.morais@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gustavo Da Silva Ramos', 'email' => 'gustavo.ramos@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Felipe Caldeira Akryghti', 'email' => 'felipe.akryghti@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Antonio Marcos Brito De Almeida', 'email' => 'antonio.almeida@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Felipe Marconi Gomes De Araujo', 'email' => 'felipe.araujo@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Renato Teixeira Barreto', 'email' => 'renato.barreto@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Daniel Sampaio Bezerra', 'email' => 'daniel.bezerra@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gabriel Junqueira De Lima Carneiro', 'email' => 'gabriel.carneiro@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gustavo Lamberty Carranza', 'email' => 'gustavo.carranza@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Samir Kaled Ali Chehade', 'email' => 'samir.chehade@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Arthur Vinicius De Oliveira Constantino', 'email' => 'arthur.constantino@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Pedro Augusto Lemos Da Costa', 'email' => 'pedro.costa@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Pedro Henrique Demian', 'email' => 'pedro.demian@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Caio Henrique Domingues', 'email' => 'caio.domingues@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gabriel Henrique Trindade Dona', 'email' => 'gabriel.dona@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Yuri Costa E Silva Eduardo', 'email' => 'yuri.eduardo@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gustavo Farias Ferreira', 'email' => 'gustavo.ferreira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Murilo Choiti Fussuma', 'email' => 'murilo.fussuma@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Joao Felipe Da Silva Garcia', 'email' => 'joao.garcia@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Vitor Gabriel Dos Santos Goncalves', 'email' => 'vitor.goncalves@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Fernando Barros Greca', 'email' => 'fernando.greca@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Vinicius Tofano Henriques', 'email' => 'vinicius.henriques@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Lia Naomi Hoida', 'email' => 'lia.hoida@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Fernanda Tozzi Honorio', 'email' => 'fernanda.honorio@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gabriel Eiti Yamazaki Kikuchi', 'email' => 'gabriel.kikuchi@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Felipe Martins De Lima', 'email' => 'felipe.lima@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Miguel Lima', 'email' => 'miguel.lima@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Nycolas Rozisca Moreno', 'email' => 'nycolas.moreno@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gustavo Antonio Silva Oliveira', 'email' => 'gustavo.oliveira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Lucas Jose Gomes Oliveira', 'email' => 'lucas.oliveira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Marcos Vinicios Florencio De Oliveira', 'email' => 'marcos.oliveira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Igor Domingues Pereira', 'email' => 'igor.pereira@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Ana Carolina Villas Boas Primo', 'email' => 'ana.primo@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Alexksandro Fernandes De Queiroz', 'email' => 'alexksandro.queiroz@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Leonardo Moreira Arcebispo De Sa', 'email' => 'leonardo.sa@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Nicholas Gabriel Soares Yamasita Sales', 'email' => 'nicholas.sales@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Lucas Tanaka Sato', 'email' => 'lucas.sato@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Caique Marques Serpeloni', 'email' => 'caique.serpeloni@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Joao Gabriel Romanin Seti', 'email' => 'joao.seti@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Joao Victor Alves Da Silva', 'email' => 'joao.silva@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Mariana Gabrielly Soares Silva', 'email' => 'mariana.silva@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Pedro Gabriel Bevilaqua Silva', 'email' => 'pedro.silva@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Rafael Ferreira Da Silva', 'email' => 'rafael.silva@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Guilherme Ramos Soares', 'email' => 'guilherme.soares@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Samuel Luiz Silva Souza', 'email' => 'samuel.souza@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Joao Rafael Lins Menezes Tadeu', 'email' => 'joao.tadeu@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Felipe Andre Tironi', 'email' => 'felipe.tironi@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Gustavo Montanini Victor', 'email' => 'gustavo.victor@email.com', 'password' => '12345678'])->create();
+        Student::factory()->withUser(['name' => 'Murilo Bertalha Volante', 'email' => 'murilo.volante@email.com', 'password' => '12345678'])->create();
     }
 }

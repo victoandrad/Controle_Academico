@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('registration_number')->unique();
-            $table->string('name');
 
             $table->unsignedBigInteger('student_group_id');
             $table->foreign('student_group_id')->references('id')->on('student_groups');

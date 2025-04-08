@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\StudentGroup;
+use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -16,7 +18,8 @@ class StudentController extends Controller
     {
         $students = Student::all();
         $studentGroups = StudentGroup::all();
-        return view('students', compact('students', 'studentGroups'));
+        $users = User::all();
+        return view('students', compact('students', 'studentGroups', 'users'));
     }
 
     /**
@@ -26,10 +29,17 @@ class StudentController extends Controller
     {
         $validated = $request->validate([
             'registration_number' => 'required|string|max:255|unique:students,registration_number',
-            'name' => 'required|string|max:255',
             'student_group_id' => 'required|exists:student_groups,id',
-            'user_id' => 'required|exists:users,id',
         ]);
+
+        $user = User::query()->create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ]);
+
+        $validated['user_id'] = $user->id;
+
         Student::query()->create($validated);
         return redirect()->route('students.index')->with('success', 'Student created successfully!');
     }

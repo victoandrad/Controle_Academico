@@ -13,112 +13,33 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        Teacher::factory(1)->create([
-            'name' => 'Adalberto Pereira Neris'
-        ]);
+        Teacher::factory()->withUser(['name' => 'Adalberto Pereira Neris', 'email' => 'adalberto.neris@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Alisson Henrique dos Santos', 'email' => 'alisson.santos@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Anderson Yashiaki Iwazaki da Silva', 'email' => 'anderson.silva@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Bruna Thais Silva Sozzo', 'email' => 'bruna.sozzo@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Bruno Henrique Coleto', 'email' => 'bruno.coleto@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Daniella Carolina Camargo Torelli', 'email' => 'daniella.torelli@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Edson Shinki Kaneshima', 'email' => 'edson.kaneshima@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Eron Ponce Pereira', 'email' => 'eron.pereira@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Felipe Nathan dos Anjos', 'email' => 'felipe.anjos@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Fernando Murilo Lourenço Roque', 'email' => 'fernando.roque@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Guilherme Cardoso Agostinetti', 'email' => 'guilherme.agostinetti@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Gustavo Queiroz Silveira', 'email' => 'gustavo.silveira@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Igor da Silva Elias', 'email' => 'igor.elias@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'João Vitor da Costa Andrade', 'email' => 'joão.andrade@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Luis Carlos de Albuquerque Silva', 'email' => 'luis.silva@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Luis Fernando Pereira Nunes', 'email' => 'luis.nunes@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Maicon Roger do Rosario', 'email' => 'maicon.rosario@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Marcelo Yukio Yamamoto', 'email' => 'marcelo.yamamoto@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Mario Henrique Akihiko da Costa Adaniya', 'email' => 'mario.adaniya@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Ricardo Petri Silva', 'email' => 'ricardo.silva@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Robson de Lacerda Zambroti', 'email' => 'robson.zambroti@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Sergio Akio Tanaka', 'email' => 'sergio.tanaka@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Simone Sawasaki Tanaka', 'email' => 'simone.tanaka@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Suzana Rezende Lemanski', 'email' => 'suzana.lemanski@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Tania Camila Kochmanscky Goulart', 'email' => 'tania.goulart@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Tiago Ravache', 'email' => 'tiago.ravache@email.com', 'password' => '12345678'])->create();
+        Teacher::factory()->withUser(['name' => 'Wilson Sanches', 'email' => 'wilson.sanches@email.com', 'password' => '12345678'])->create();
 
-        Teacher::factory(1)->create([
-            'name' => 'Alisson Henrique dos Santos'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Anderson Yashiaki Iwazaki da Silva'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Bruna Thais Silva Sozzo'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Bruno Henrique Coleto'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Daniella Carolina Camargo Torelli'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Edson Shinki Kaneshima'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Eron Ponce Pereira'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Felipe Nathan dos Anjos'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Fernando Murilo Lourenço Roque'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Guilherme Cardoso Agostinetti'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Gustavo Queiroz Silveira'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Igor da Silva Elias'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'João Vitor da Costa Andrade'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Luis Carlos de Albuquerque Silva'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Luis Fernando Pereira Nunes'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Maicon Roger do Rosario'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Marcelo Yukio Yamamoto'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Mario Henrique Akihiko da Costa Adaniya'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Ricardo Petri Silva'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Robson de Lacerda Zambroti'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Sergio Akio Tanaka'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Simone Sawasaki Tanaka'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Suzana Rezende Lemanski'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Tania Camila Kochmanscky Goulart'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Tiago Ravache'
-        ]);
-
-        Teacher::factory(1)->create([
-            'name' => 'Wilson Sanches'
-        ]);
     }
 }
