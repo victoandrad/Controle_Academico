@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-sidebar expand="true"/>
-
     <div class="main">
         <h1 class="mx-4">Bem-vindo à página inicial</h1>
         <div class="card mx-4">

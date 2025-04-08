@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-sidebar expand="true"/>
-
     <div class="main p-3" id="borda">
         <main class="content px-3 py-2">
             <div class="container-fluid">
