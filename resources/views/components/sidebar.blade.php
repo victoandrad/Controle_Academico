@@ -3,7 +3,7 @@
 <div class="wrapper">
     <aside id="sidebar" class="{{ $expand ? 'expand' : '' }}">
         <div class="d-flex">
-            <button class="toggle-btn" type="button" onclick="toggleSidebar()">
+            <button class="toggle-btn" type="button" id="toggle-btn">
                 <i class="lni lni-grid-alt"></i>
             </button>
             <div class="sidebar-logo">
@@ -54,7 +54,14 @@
             </li>
         </ul>
         <div class="sidebar-footer">
-            <a href="#" class="sidebar-link"><i class="lni lni-exit"></i><span>Log-out</span></a>
+            <a href="#" class="sidebar-link" id="logout-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="lni lni-exit"></i>
+                <span>Log-out</span>
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </div>
     </aside>
 </div>
