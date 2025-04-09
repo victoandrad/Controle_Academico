@@ -58,7 +58,7 @@ class TaskController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'value' => 'required|numeric|min:0',
-            'lesson' => 'required|exists:lesson,id',
+            'lesson_id' => 'required|exists:lesson,id',
         ]);
         try {
             $data = Task::query()->findOrFail($id)->update($validated);

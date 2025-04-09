@@ -83,7 +83,7 @@ class FrequencyController extends Controller
         $validated = $request->validate([
             'attended' => 'required|boolean',
             'student_id' => 'required|exists:students,id',
-            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+            'lesson_id' => 'required|exists:lesson,id',
         ]);
         try {
             $data = Frequency::query()->findOrFail($id)->update($validated);

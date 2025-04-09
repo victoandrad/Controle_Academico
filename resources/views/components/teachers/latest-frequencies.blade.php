@@ -54,7 +54,7 @@
                             latestFrequenciesTableBody.innerHTML = '';
                             frequencies.forEach(frequency => {
                                 const row = document.createElement('tr');
-                                const attendedText = frequency.attended ? '<span class="text-success fw bold">Yes</span>' : '<span class="text-danger fw bold">No</span>'
+                                const attendedText = frequency.attended ? '<span class="badge bg-success">Present</span>' : '<span class="badge bg-danger">Absent</span>'
                                 const formattedDate = new Date(frequency.date).toLocaleDateString('pt-BR');
                                 row.innerHTML = `
                                     <td>${frequency.id}</td>
