@@ -10,7 +10,11 @@
                     <select class="form-select" id="latest-frequencies-select" name="lesson_id">
                         <option selected>Select</option>
                         @foreach($lessons as $lesson)
-                            <option value="{{$lesson->id}}">{{$lesson->curriculumUnit->name}}</option>
+                            <option value="{{$lesson->id}}">
+                                [{{$lesson->timeslot->day_of_week}},
+                                {{$lesson->timeslot->start_time}}]
+                                {{$lesson->curriculumUnit->name}}
+                            </option>
                         @endforeach
                     </select>
                 </div>
