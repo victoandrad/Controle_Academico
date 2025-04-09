@@ -55,9 +55,6 @@
                                 <td>{{$teacher->user->name}}</td>
                                 <td>{{$teacher->user->email}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
                                     <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')

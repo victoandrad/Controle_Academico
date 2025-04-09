@@ -70,9 +70,6 @@
                                 <td>{{$studentGroup->size()}}</td>
                                 <td>{{$studentGroup->created_at->format('d/m/Y')}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-warning">
-                                        Edit
-                                    </button>
                                     <form action="{{ route('studentGroups.destroy', $studentGroup->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')

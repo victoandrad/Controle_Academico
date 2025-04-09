@@ -24,7 +24,6 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Value</th>
-                <th>Actions</th>
             </tr>
             </thead>
             <tbody id="view-tasks-table-body">
@@ -57,10 +56,6 @@
                                     <td>${task.name}</td>
                                     <td>${task.description}</td>
                                     <td>${task.value}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                    </td>
                                 `;
                                 table.appendChild(row);
                             });
