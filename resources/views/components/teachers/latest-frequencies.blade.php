@@ -26,7 +26,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Was Attended?</th>
+                <th>Attended?</th>
                 <th>Date</th>
             </tr>
             </thead>

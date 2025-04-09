@@ -20,11 +20,8 @@ return new class extends Migration
             $table->boolean('completed')->default(false);
             $table->double('value')->default(0);
 
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-
-            $table->unsignedBigInteger('curriculum_unit_id');
-            $table->foreign('curriculum_unit_id')->references('id')->on('curriculum_units');
+            $table->unsignedBigInteger('lesson_id');
+            $table->foreign('lesson_id')->references('id')->on('lessons');
 
             $table->softDeletes();
         });

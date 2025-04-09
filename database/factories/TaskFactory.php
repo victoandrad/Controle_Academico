@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\CurriculumUnit;
+use App\Models\Lesson;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,8 +24,7 @@ class TaskFactory extends Factory
             'description' => fake()->text(),
             'completed' => fake()->boolean(),
             'value' => fake()->numberBetween(1, 100),
-            'student_id' => Student::query()->inRandomOrder()->first()->id,
-            'curriculum_unit_id' => CurriculumUnit::query()->inRandomOrder()->first()->id,
+            'lesson_id' => Lesson::query()->inRandomOrder()->first()->id,
         ];
     }
 }

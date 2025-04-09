@@ -13,7 +13,7 @@
 <body class="d-flex justify-content-center align-items-center bg-light">
 
 <div class="card shadow p-4" style="min-width: 350px;">
-    <h4 class="mb-4 text-center">Login</h4>
+    <h4 class="mb-4 text-center fw-bold">Login</h4>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -25,16 +25,16 @@
         @csrf
 
         <div class="mb-3">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" name="email" class="form-control" id="email" required autofocus>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="email" required autofocus placeholder="Email">
         </div>
 
         <div class="mb-3">
-            <label for="password" class="form-label">Senha</label>
-            <input type="password" name="password" class="form-control" id="password" required>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="password" required placeholder="Password">
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        <button type="submit" class="btn btn-primary w-100">Confirm</button>
     </form>
 </div>
 

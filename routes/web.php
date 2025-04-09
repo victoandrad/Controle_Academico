@@ -88,6 +88,10 @@ Route::middleware('auth')->group(function () {
         Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
+        Route::get('/', function() {
+            return view('admin.home');
+        });
+
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
