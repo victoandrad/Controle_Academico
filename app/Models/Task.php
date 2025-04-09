@@ -19,17 +19,11 @@ class Task extends Model
         'description',
         'completed',
         'value',
-        'student_id',
-        'curriculum_unit_id',
+        'lesson_id',
     ];
 
-    public function student(): BelongsTo
+    public function lesson(): BelongsTo
     {
-        return $this->belongsTo(Student::class, 'student_id');
-    }
-
-    public function curriculumUnit(): BelongsTo
-    {
-        return $this->belongsTo(CurriculumUnit::class, 'curriculum_unit_id');
+        return $this->belongsTo(Lesson::class, 'lesson_id');
     }
 }
