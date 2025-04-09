@@ -28,6 +28,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Attended?</th>
+                <th>Excused?</th>
                 <th>Date</th>
             </tr>
             </thead>
@@ -56,11 +57,13 @@
                             frequencies.forEach(frequency => {
                                 const row = document.createElement('tr');
                                 const attendedText = frequency.attended ? '<span class="badge bg-success">Present</span>' : '<span class="badge bg-danger">Absent</span>'
+                                const excusedText = frequency.excused ? '<span class="badge bg-success">Yes</span>' : '<span class="badge bg-danger">No</span>'
                                 const formattedDate = new Date(frequency.date).toLocaleDateString('pt-BR');
                                 row.innerHTML = `
                                     <td>${frequency.id}</td>
                                     <td>${frequency.student.user.name}</td>
                                     <td>${attendedText}</td>
+                                    <td>${excusedText}</td>
                                     <td>${formattedDate}</td>
                                 `;
                                 latestFrequenciesTableBody.appendChild(row);
