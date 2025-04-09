@@ -17,7 +17,6 @@ class Task extends Model
     protected $fillable = [
         'name',
         'description',
-        'completed',
         'value',
         'lesson_id',
     ];
@@ -25,5 +24,12 @@ class Task extends Model
     public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class, 'lesson_id');
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'tasks_students')
+            ->withPivot('completed', 'completed_at', 'grade')
+            ->withTimestamps();
     }
 }

@@ -29,10 +29,8 @@ class TaskController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'completed' => 'required|boolean',
             'value' => 'required|numeric|min:0',
-            'student_id' => 'required|exists:students,id',
-            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+            'lesson' => 'required|exists:lesson,id',
         ]);
         $data = Task::query()->create($validated);
         return redirect()->route('studentGroups.index')->with('success', 'Task created successfully!');

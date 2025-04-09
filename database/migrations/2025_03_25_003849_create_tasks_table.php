@@ -17,7 +17,6 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('description')->nullable();
-            $table->boolean('completed')->default(false);
             $table->double('value')->default(0);
 
             $table->unsignedBigInteger('lesson_id');

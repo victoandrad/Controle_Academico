@@ -38,6 +38,8 @@ class Student extends Model
 
     public function tasks(): HasMany
     {
-        return $this->hasMany(Task::class, 'student_id', 'id');
+        return $this->belongsToMany(Task::class, 'tasks_students')
+            ->withPivot('completed', 'completed_at', 'grade')
+            ->withTimestamps();
     }
 }

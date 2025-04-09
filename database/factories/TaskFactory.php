@@ -22,7 +22,6 @@ class TaskFactory extends Factory
         return [
             'name' => fake()->title(),
             'description' => fake()->text(),
-            'completed' => fake()->boolean(),
             'value' => fake()->numberBetween(1, 100),
             'lesson_id' => Lesson::query()->inRandomOrder()->first()->id,
         ];
