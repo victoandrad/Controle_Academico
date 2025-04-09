@@ -30,7 +30,6 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Present</th>
-                    <th>Absent</th>
                     <th>Excused</th>
                 </tr>
                 </thead>
@@ -62,8 +61,10 @@
                                 row.innerHTML = `
                                     <td>${student.id}</td>
                                     <td>${student.user.name}</td>
-                                    <td><input class="form-check-input" type="radio" name="student_${student.id}" value="present" required></td>
-                                    <td><input class="form-check-input" type="radio" name="student_${student.id}" value="absent" required></td>
+                                    <td>
+                                        <input type="hidden" name="student_${student.id}" value="0">
+                                        <input class="form-check-input" type="checkbox" name="student_${student.id}" value="1">
+                                    </td>
                                     <td><input class="form-check-input" type="checkbox" name="student_${student.id}_excused"></td>
                                 `;
                                 registerFormTableBody.appendChild(row);

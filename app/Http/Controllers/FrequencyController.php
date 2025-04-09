@@ -37,14 +37,9 @@ class FrequencyController extends Controller
         foreach ($request->all() as $key => $value) {
             if (Str::startsWith($key, 'student_') && !Str::endsWith($key, '_excused')) {
                 $studentId = explode('_', $key)[1];
-
-                if (!Student::query()->where('id', $studentId)->exists()) {
-                    continue;
-                }
-
-                $attended = $value === 'present' ? 1 : 0;
+                if (!Student::query()->where('id', $studentId)->exists()) continue;
+                $attended = $value;
                 $excused = $request->has("student_{$studentId}_excused");
-
                 Frequency::query()->create([
                     'lesson_id' => $lessonId,
                     'student_id' => $studentId,
@@ -54,7 +49,6 @@ class FrequencyController extends Controller
                 ]);
             }
         }
-
         return redirect()->route('frequencies.index')->with('success', 'Frequencies created successfully!');
     }
 
