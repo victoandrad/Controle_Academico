@@ -35,9 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/lessons/{lesson}', [LessonController::class, 'show'])->name('lessons.show');
     Route::put('/lessons/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
     Route::delete('/lessons/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+
     Route::get('/lessons/{lesson}/students', [LessonController::class, 'getStudents']);
-    Route::get('/lessons/{lesson}/frequencies', [LessonController::class, 'getFrequencies']);
     Route::get('/lessons/{lesson}/tasks', [LessonController::class, 'getTasks']);
+
+    Route::get('/lessons/frequencies', [LessonController::class, 'getFrequencies'])->name('lessons.frequencies');
 
     // Rooms
     Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');

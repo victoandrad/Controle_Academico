@@ -1,6 +1,6 @@
 {{-- REGISTER FORM --}}
 <div class="card mx-4">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" aria-label="Close">Add Task</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" aria-label="Close">Add Frequencies</button>
     <x-modal id="addModal" title="Add Frequencies">
         <form action="{{route('frequencies.store')}}" method="POST">
             @csrf
