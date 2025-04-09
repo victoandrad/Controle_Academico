@@ -23,7 +23,7 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::all();
         $users = User::all();
-        return view('teachers', compact('teachers', 'users'));
+        return view('admin.register.teachers', compact('teachers', 'users'));
     }
 
     /**

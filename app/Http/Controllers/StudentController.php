@@ -18,7 +18,7 @@ class StudentController extends Controller
         $students = Student::all();
         $studentGroups = StudentGroup::all();
         $users = User::all();
-        return view('students', compact('students', 'studentGroups', 'users'));
+        return view('admin.register.students', compact('students', 'studentGroups', 'users'));
     }
 
     /**

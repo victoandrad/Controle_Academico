@@ -1,27 +1,22 @@
-{{-- LATEST FREQUENCIES --}}
+{{-- VIEW FREQUENCIES --}}
 <div class="card mx-4">
     <div class="card-body">
         <h5 class="card-title fw-bold">View</h5>
-        <form action="{{route('frequencies.index')}}" method="POST">
-            @csrf
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="latest-frequencies-select" class="form-label">Lesson</label>
-                    <select class="form-select" id="latest-frequencies-select" name="lesson_id">
-                        <option selected>Select</option>
-                        @foreach($lessons as $lesson)
-                            <option value="{{$lesson->id}}">
-                                [{{$lesson->timeslot->day_of_week}},
-                                {{$lesson->timeslot->start_time}}]
-                                {{$lesson->curriculumUnit->name}}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label for="latest-frequencies-select" class="form-label">Lesson</label>
+                <select class="form-select" id="lesson-select" name="lesson_id">
+                    <option selected>Select</option>
+                    @foreach($lessons as $lesson)
+                        <option value="{{$lesson->id}}">
+                            [{{$lesson->timeslot->day_of_week}},
+                            {{$lesson->timeslot->start_time}}]
+                            {{$lesson->curriculumUnit->name}}
+                        </option>
+                    @endforeach
+                </select>
             </div>
-        </form>
-
-        {{-- LATEST FREQUENCIES TABLE --}}
+        </div>
         <table class="table table-bordered">
             <thead class="table-light">
             <tr>
@@ -32,7 +27,7 @@
                 <th>Date</th>
             </tr>
             </thead>
-            <tbody id="latest-frequencies-table-body">
+            <tbody id="view-frequencies-table-body">
 
             </tbody>
         </table>
@@ -42,18 +37,18 @@
 @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const latestFrequenciesSelect = document.getElementById('latest-frequencies-select')
-            const latestFrequenciesTableBody = document.getElementById('latest-frequencies-table-body')
-            latestFrequenciesSelect.addEventListener('change', function() {
+            const select = document.getElementById('lesson-select')
+            const table = document.getElementById('view-frequencies-table-body')
+            select.addEventListener('change', function() {
                 const lessonId = this.value;
                 if (lessonId && lessonId !== 'Select') {
                     fetch(`/lessons/${lessonId}/frequencies`)
                         .then(response => {
-                            if (!response.ok) throw new Error('Error while fetching users.')
+                            if (!response.ok) throw new Error('Error while fetching.')
                             return response.json();
                         })
                         .then(frequencies => {
-                            latestFrequenciesTableBody.innerHTML = '';
+                            table.innerHTML = '';
                             frequencies.forEach(frequency => {
                                 const row = document.createElement('tr');
                                 const attendedText = frequency.attended ? '<span class="badge bg-success">Present</span>' : '<span class="badge bg-danger">Absent</span>'
@@ -66,16 +61,16 @@
                                     <td>${excusedText}</td>
                                     <td>${formattedDate}</td>
                                 `;
-                                latestFrequenciesTableBody.appendChild(row);
+                                table.appendChild(row);
                             });
                         })
                         .catch(error => {
                             alert('Error: ' + error.message)
                         })
                 } else {
-                    latestFrequenciesTableBody.innerHTML = '';
+                    table.innerHTML = '';
                 }
-            })
+            });
         });
     </script>
 @endpush

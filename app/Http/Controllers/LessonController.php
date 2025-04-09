@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Frequency;
 use App\Models\Lesson;
+use App\Models\Task;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,12 @@ class LessonController extends Controller
             ->orderBy('date', 'desc')
             ->get();
         return response()->json($frequencies);
+    }
+
+    public function getTasks($id)
+    {
+        $tasks = Task::query()->where('lesson_id', $id)->get();
+        return response()->json($tasks);
     }
 
     /**

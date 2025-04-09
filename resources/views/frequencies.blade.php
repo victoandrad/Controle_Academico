@@ -8,7 +8,7 @@
         @auth
             @if(Auth::user()->teacher)
                 @include('components.teachers.register-frequencies')
-                @include('components.teachers.latest-frequencies')
+                @include('components.teachers.view-frequencies')
             @elseif(Auth::user()->student)
                 @include('components.students.view-frequencies')
             @endif

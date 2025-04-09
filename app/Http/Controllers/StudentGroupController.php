@@ -14,7 +14,7 @@ class StudentGroupController extends Controller
     public function index()
     {
         $studentGroups = StudentGroup::all();
-        return view('studentGroups', compact('studentGroups'));
+        return view('admin.register.studentGroups', compact('studentGroups'));
     }
 
     /**

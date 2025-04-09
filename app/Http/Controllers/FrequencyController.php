@@ -18,7 +18,7 @@ class FrequencyController extends Controller
     {
         $user = Auth::user();
         $lessons = $user->teacher->lessons;
-        return view('admin.frequencies', compact('lessons'));
+        return view('frequencies', compact('lessons'));
     }
 
     /**
