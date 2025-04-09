@@ -1,11 +1,11 @@
 {{-- LATEST FREQUENCIES --}}
 <div class="card mx-4">
     <div class="card-body">
-        <h5 class="card-title fw-bold">Latest Frequencies</h5>
+        <h5 class="card-title fw-bold">View</h5>
         <form action="{{route('frequencies.index')}}" method="POST">
             @csrf
             <div class="row mb-3">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <label for="latest-frequencies-select" class="form-label">Lesson</label>
                     <select class="form-select" id="latest-frequencies-select" name="lesson_id">
                         <option selected>Select</option>
@@ -17,9 +17,6 @@
                             </option>
                         @endforeach
                     </select>
-                </div>
-                <div class="col-md-4 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary w-100">Confirm</button>
                 </div>
             </div>
         </form>

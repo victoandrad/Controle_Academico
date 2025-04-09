@@ -33,8 +33,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Present</th>
-                    <th>Excused</th>
+                    <th>Attended?</th>
+                    <th>Excused?</th>
                 </tr>
                 </thead>
                 <tbody id="register-form-table-body">
