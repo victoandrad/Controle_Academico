@@ -1,7 +1,7 @@
 {{-- REGISTER FORM --}}
 <div class="card mx-4">
-    <div class="card-body">
-        <h5 class="card-title fw-bold">Register</h5>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" aria-label="Close">Add Task</button>
+    <x-modal id="addModal" title="Add Frequencies">
         <form action="{{route('frequencies.store')}}" method="POST">
             @csrf
             <div class="row mb-3">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="data" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="data" name="frequency_date" required>
+                    <input type="date" class="form-control" id="data" name="frequency_date" value="{{ now()->format('Y-m-d') }}" required>
                 </div>
                 <div class="col-md-4 d-flex align-items-end">
                     <button type="submit" class="btn btn-primary w-100">Confirm</button>
@@ -42,7 +42,8 @@
                 </tbody>
             </table>
         </form>
-    </div>
+
+    </x-modal>
 </div>
 
 @push('scripts')

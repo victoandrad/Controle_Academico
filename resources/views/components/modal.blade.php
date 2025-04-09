@@ -1,5 +1,9 @@
+{{-- MODAL --}}
+
+@props(['id' => 'defaultModal', 'title' => 'Modal Title', 'footer' => 'Modal Footer'])
+
 <div class="modal fade" id="{{ $id }}" tabindex="-1" aria-labelledby="{{ $id }}Label" aria-hidden="true">
-    <div class="modal-dialog {{ $size ?? '' }}">
+    <div class="modal-dialog {{ $size ?? '' }} modal-lg">
         <div class="modal-content">
             @if ($title ?? false)
                 <div class="modal-header">
