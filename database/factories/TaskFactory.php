@@ -2,9 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\CurriculumUnit;
 use App\Models\Lesson;
-use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

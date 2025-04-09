@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Frequency;
-use App\Models\Lesson;
 use App\Models\Student;
-use App\Models\StudentGroup;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

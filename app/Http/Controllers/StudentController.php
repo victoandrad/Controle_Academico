@@ -7,7 +7,6 @@ use App\Models\StudentGroup;
 use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {

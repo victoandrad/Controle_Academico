@@ -30,10 +30,10 @@ class TaskController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'value' => 'required|numeric|min:0',
-            'lesson' => 'required|exists:lesson,id',
+            'lesson_id' => 'required|exists:lesson,id',
         ]);
         $data = Task::query()->create($validated);
-        return redirect()->route('studentGroups.index')->with('success', 'Task created successfully!');
+        return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
     }
 
     /**
@@ -45,7 +45,7 @@ class TaskController extends Controller
             $data = Task::query()->findOrFail($id);
             return response()->json($data);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
+            return redirect()->route('tasks.index')->with('error', 'Task not found');
         }
     }
 
@@ -57,16 +57,14 @@ class TaskController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'completed' => 'required|boolean',
             'value' => 'required|numeric|min:0',
-            'student_id' => 'required|exists:students,id',
-            'curriculum_unit_id' => 'required|exists:curriculum_units,id',
+            'lesson' => 'required|exists:lesson,id',
         ]);
         try {
             $data = Task::query()->findOrFail($id)->update($validated);
-            return redirect()->route('studentGroups.index')->with('success', 'Task updated successfully!');
+            return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
+            return redirect()->route('tasks.index')->with('error', 'Task not found');
         }
     }
 
@@ -77,9 +75,9 @@ class TaskController extends Controller
     {
         try {
             Task::query()->findOrFail($id)->delete();
-            return redirect()->route('studentGroups.index')->with('success', 'Task deleted successfully!');
+            return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('studentGroups.index')->with('error', 'Task not found');
+            return redirect()->route('tasks.index')->with('error', 'Task not found');
         }
     }
 }
